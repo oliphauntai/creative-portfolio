@@ -35,7 +35,7 @@ export default function About() {
           Interested in working together?
         </p>
         <a
-          href="mailto:hello@example.com"
+          href="/contact"
           className="inline-block px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
         >
           Get in Touch
