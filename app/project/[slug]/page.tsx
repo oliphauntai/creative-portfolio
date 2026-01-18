@@ -7,7 +7,7 @@ import { getProjectBySlug, getAllProjects } from '@/lib/projects'
 import { ImageGallery } from '@/components/image-gallery'
 import { Breadcrumb } from '@/components/breadcrumb'
 
-interface ProjectPageProps {
+interface PageProps {
   params: Promise<{
     slug: string
   }>
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: ProjectPageProps) {
+export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
   const project = getProjectBySlug(slug)
   
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   }
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params
   const project = getProjectBySlug(slug)
 
