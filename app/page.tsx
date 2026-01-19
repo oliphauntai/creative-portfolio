@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion'
 import { BentoGrid } from '@/components/bento-grid'
+import { LogoTicker } from '@/components/logo-ticker'
 import { projects } from '@/lib/data'
 
 export default function Home() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <section className="mb-16 relative overflow-hidden rounded-3xl p-12 md:p-16">
+    <>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section className="mb-16 relative overflow-hidden rounded-3xl p-12 md:p-16">
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-accent/20 via-purple-500/20 to-pink-500/20 dark:from-accent/10 dark:via-purple-500/10 dark:to-pink-500/10"
           animate={{
@@ -42,13 +44,18 @@ export default function Home() {
           </p>
         </div>
       </section>
+      </div>
 
-      <section>
-        <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-8">
-          Featured Work
-        </h2>
-        <BentoGrid projects={projects} />
-      </section>
-    </div>
+      <LogoTicker />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-8">
+            Featured Work
+          </h2>
+          <BentoGrid projects={projects} />
+        </section>
+      </div>
+    </>
   )
 }
